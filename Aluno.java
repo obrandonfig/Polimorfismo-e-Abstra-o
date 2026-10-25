@@ -1,4 +1,4 @@
-public class Aluno extends Pessoa{
+public class Aluno extends Pessoa implements Notificavel{
 
     private String curso;
 
@@ -18,5 +18,19 @@ public class Aluno extends Pessoa{
         
     }
 
-    
+    @Override
+    public void apresentarFuncao() {
+        System.out.println("Sou aluno do curso " + curso);
+    }
+
+    @Override 
+    public void exibirDados() {
+        super.exibirDados() ;
+        System.out.println("Curso: " + curso);
+    }
+
+    @Override
+    public void notificar(String mensagem) {
+        System.out.println("Notificação para o aluno " + getNome() + ": " + mensagem);
+    }
 }
